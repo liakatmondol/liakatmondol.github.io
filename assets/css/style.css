@@ -2,7 +2,7 @@
 # General
 --------------------------------------------------------------*/
 body {
-  background-color: #f5f5f5;
+  background: linear-gradient(135deg, #f5f5f5 0%, #e8f4fd 100%);
   color: #4e4e4e;
 }
 
@@ -748,24 +748,56 @@ a:hover {
 
 .skill-mf .progress .progress-bar {
   height: .7rem;
-  background-color: #0078ff;
+  background: linear-gradient(90deg, #0078ff 0%, #00b4ff 100%);
+  box-shadow: 0 0 10px rgba(0, 120, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.skill-mf .progress .progress-bar:hover {
+  box-shadow: 0 0 15px rgba(0, 120, 255, 0.5);
 }
 
 /*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
 .service-box {
-  background-color: #fff;
+  background: linear-gradient(145deg, #ffffff 0%, #f8fcff 100%);
   padding: 2.5rem 1.3rem;
   border-radius: 1rem;
   margin-bottom: 3rem;
+  border: 1px solid rgba(0, 120, 255, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 120, 255, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.service-box:hover::before {
+  left: 100%;
+}
+
+.service-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 120, 255, 0.15);
+  border-color: rgba(0, 120, 255, 0.3);
 }
 
 .service-box:hover .ico-circle {
   transition: all 500ms ease;
   color: #fff;
   background-color: #0078ff;
-  box-shadow: 0 0 0 10px #cde1f8;
+  box-shadow: 0 0 0 10px #cde1f8, 0 0 30px rgba(0, 120, 255, 0.4);
+  transform: scale(1.1);
 }
 
 .service-box .service-ico {
